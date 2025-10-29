@@ -3,9 +3,7 @@
   "scripts": {
     "dev": "nodemon server.js --dev",
     "start": "node server.js",
-    "build": "npm run build:server",
-    "build:server": "vite build --outDir dist/server --ssr /index.js",
-    "devinstall": "zx ../../devinstall.mjs -- node server.js --dev",
+    "build": "npm run build",
     "lint": "eslint . --ext .js,.jsx --fix"
   },
   "dependencies": {
