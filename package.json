@@ -1,9 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js --dev",
     "start": "node server.js",
-    "build": "npm run build",
     "lint": "eslint . --ext .js,.jsx --fix"
   },
   "dependencies": {
