@@ -1,19 +1,22 @@
 import express from "express";
+import cors from "cors";
 import fs from "fs";
-import { createServer as createViteServer } from "vite";
+//import { createServer as createViteServer } from "vite";
 import "dotenv/config";
 
 const app = express();
 app.use(express.text());
+app.use(cors());
 const port = process.env.PORT || 3000;
 const apiKey = process.env.OPENAI_API_KEY;
-
+/*
 // Configure Vite middleware for React client
 const vite = await createViteServer({
   server: { middlewareMode: true },
   appType: "custom",
 });
 app.use(vite.middlewares);
+*/
 
 const sessionConfig = JSON.stringify({
   session: {
@@ -71,7 +74,7 @@ app.get("/token", async (req, res) => {
     res.status(500).json({ error: "Failed to generate token" });
   }
 });
-
+/*
 // Render the React client
 app.use("*", async (req, res, next) => {
   const url = req.originalUrl;
@@ -90,7 +93,7 @@ app.use("*", async (req, res, next) => {
     next(e);
   }
 });
-
+*/
 app.listen(port, () => {
   console.log(`Express server running on *:${port}`);
 });
